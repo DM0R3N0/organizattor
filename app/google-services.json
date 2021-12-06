@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "1082150143257",
+    "firebase_url": "https://organizzator-bff3f-default-rtdb.firebaseio.com",
+    "project_id": "organizzator-bff3f",
+    "storage_bucket": "organizzator-bff3f.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1082150143257:android:a91793a7a9b11611eb7188",
+        "android_client_info": {
+          "package_name": "br.com.dannes.organizattor"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1082150143257-c9ofaape3g1b8sdfqs2rb01mfqqcct57.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "br.com.dannes.organizattor",
+            "certificate_hash": "dcc72346c6295244ad2967b7a9877e7d9e112374"
+          }
+        },
+        {
+          "client_id": "1082150143257-d8181ep7b1v7avq0jnge75pgpj9900rs.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDUIImdpObSXfKXHRME78NOy0FtuLvGgaE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1082150143257-d8181ep7b1v7avq0jnge75pgpj9900rs.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
