@@ -4,15 +4,16 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 
-import br.com.dannes.organizattor.R;
-import br.com.dannes.organizattor.config.ConfiguracaoFirebase;
 import com.google.firebase.auth.FirebaseAuth;
 import com.heinrichreimersoftware.materialintro.app.IntroActivity;
 import com.heinrichreimersoftware.materialintro.slide.FragmentSlide;
 
+import br.com.dannes.organizattor.R;
+import br.com.dannes.organizattor.config.ConfiguracaoFirebase;
+
 public class MainActivity extends IntroActivity {
 
-    private FirebaseAuth autenticacao;
+    public FirebaseAuth autenticacao;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

@@ -1,7 +1,8 @@
 package br.com.dannes.organizattor.adapter;
 
+import android.annotation.SuppressLint;
 import android.content.Context;
-import android.support.v7.widget.RecyclerView;
+//import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -11,11 +12,14 @@ import br.com.dannes.organizattor.R;
 import br.com.dannes.organizattor.model.Movimentacao;
 
 import java.util.List;
+//import android.os.Bundle;
+
+import androidx.annotation.NonNull;
+import androidx.recyclerview.widget.RecyclerView;
 
 /**
- * Created by Jamilton Damasceno
+ * Created by Dannes
  */
-
 public class AdapterMovimentacao extends RecyclerView.Adapter<AdapterMovimentacao.MyViewHolder> {
 
     List<Movimentacao> movimentacoes;
@@ -26,6 +30,7 @@ public class AdapterMovimentacao extends RecyclerView.Adapter<AdapterMovimentaca
         this.context = context;
     }
 
+    @NonNull
     @Override
     public MyViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         View itemLista = LayoutInflater.from(parent.getContext()).inflate(R.layout.adapter_movimentacao, parent, false);
@@ -33,6 +38,7 @@ public class AdapterMovimentacao extends RecyclerView.Adapter<AdapterMovimentaca
     }
 
 
+    @SuppressLint("SetTextI18n")
     @Override
     public void onBindViewHolder(MyViewHolder holder, int position) {
         Movimentacao movimentacao = movimentacoes.get(position);
@@ -54,7 +60,7 @@ public class AdapterMovimentacao extends RecyclerView.Adapter<AdapterMovimentaca
         return movimentacoes.size();
     }
 
-    public class MyViewHolder extends RecyclerView.ViewHolder {
+    public static class MyViewHolder extends RecyclerView.ViewHolder {
 
         TextView titulo, valor, categoria;
 

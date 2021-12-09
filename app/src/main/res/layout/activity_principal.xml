@@ -1,61 +1,71 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:fab="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.example.dannes.organizattor.br.example.dannes.organizattor.activity.PrincipalActivity">
+    tools:context="br.com.dannes.organizattor.activity.PrincipalActivity">
 
-    <android.support.design.widget.AppBarLayout
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/appBarLayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:theme="@style/AppTheme.AppBarOverlay"
-        app:elevation="0dp">
+        app:elevation="0dp"
+        tools:ignore="MissingConstraints">
 
-        <android.support.v7.widget.Toolbar
+        <androidx.appcompat.widget.Toolbar
             android:id="@+id/toolbar"
             android:layout_width="match_parent"
             android:layout_height="?attr/actionBarSize"
             android:background="?attr/colorPrimary"
             app:popupTheme="@style/AppTheme.PopupOverlay" />
 
-    </android.support.design.widget.AppBarLayout>
+    </com.google.android.material.appbar.AppBarLayout>
 
-    <include layout="@layout/content_principal" />
+    <include
+        android:id="@+id/include"
+        layout="@layout/content_principal" />
 
     <com.github.clans.fab.FloatingActionMenu
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="end|bottom"
         android:layout_margin="10dp"
-        fab:menu_icon="@drawable/ic_adicionar_branco_24dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginBottom="10dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.941"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/appBarLayout"
+        app:layout_constraintVertical_bias="0.945"
         app:menu_colorNormal="@color/colorAccent"
         app:menu_colorPressed="@color/colorAccent"
-        >
+        fab:menu_icon="@drawable/ic_adicionar_branco_24dp"
+        tools:ignore="MissingConstraints">
 
         <com.github.clans.fab.FloatingActionButton
             android:id="@+id/menu_despesa"
-            android:onClick="adicionarDespesa"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:src="@drawable/ic_adicionar_branco_24dp"
+            android:onClick="adicionarDespesa"
+            app:srcCompat="@drawable/ic_adicionar_branco_24dp"
             fab:fab_colorNormal="@color/colorPrimaryDespesa"
             fab:fab_label="Despesa"
-            fab:fab_size="mini"
-            />
+            fab:fab_size="mini" />
 
         <com.github.clans.fab.FloatingActionButton
             android:id="@+id/menu_receita"
-            android:onClick="adicionarReceita"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:src="@drawable/ic_adicionar_branco_24dp"
+            android:onClick="adicionarReceita"
+            app:srcCompat="@drawable/ic_adicionar_branco_24dp"
             fab:fab_colorNormal="@color/colorPrimaryReceita"
             fab:fab_label="Receita"
-            fab:fab_size="mini"
-            />
+            fab:fab_size="mini" />
 
     </com.github.clans.fab.FloatingActionMenu>
 
-</android.support.design.widget.CoordinatorLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

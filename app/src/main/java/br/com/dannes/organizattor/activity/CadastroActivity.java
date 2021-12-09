@@ -1,7 +1,9 @@
 package br.com.dannes.organizattor.activity;
 
-import android.support.annotation.NonNull;
-import android.support.v7.app.AppCompatActivity;
+//import android.support.annotation.NonNull;
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
+//import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -20,11 +22,14 @@ import com.google.firebase.auth.FirebaseAuthInvalidCredentialsException;
 import com.google.firebase.auth.FirebaseAuthUserCollisionException;
 import com.google.firebase.auth.FirebaseAuthWeakPasswordException;
 
+import java.util.Objects;
+
+
 public class CadastroActivity extends AppCompatActivity {
 
     private EditText campoNome, campoEmail, campoSenha;
-    private Button botaoCadastrar;
-    private FirebaseAuth autenticacao;
+    public Button botaoCadastrar;
+    public FirebaseAuth autenticacao;
     private Usuario usuario;
 
     @Override
@@ -95,9 +100,9 @@ public class CadastroActivity extends AppCompatActivity {
 
                 }else {
 
-                    String excecao = "";
+                    String excecao;
                     try {
-                        throw task.getException();
+                        throw Objects.requireNonNull(task.getException());
                     }catch ( FirebaseAuthWeakPasswordException e){
                         excecao = "Digite uma senha mais forte!";
                     }catch ( FirebaseAuthInvalidCredentialsException e){

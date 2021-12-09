@@ -1,9 +1,10 @@
 package br.com.dannes.organizattor.activity;
-
-import android.content.Intent;
-import android.support.annotation.NonNull;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.content.Intent;
+import androidx.annotation.NonNull;
+//import android.support.annotation.NonNull;
+//import android.support.v7.app.AppCompatActivity;
+import androidx.appcompat.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -19,12 +20,14 @@ import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseAuthInvalidCredentialsException;
 import com.google.firebase.auth.FirebaseAuthInvalidUserException;
 
+import java.util.Objects;
+
 public class LoginActivity extends AppCompatActivity {
 
     private EditText campoEmail, campoSenha;
-    private Button botaoEntrar;
+    public Button botaoEntrar;
     private Usuario usuario;
-    private FirebaseAuth autenticacao;
+    public FirebaseAuth autenticacao;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -82,9 +85,9 @@ public class LoginActivity extends AppCompatActivity {
 
                 }else {
 
-                    String excecao = "";
+                    String excecao;
                     try {
-                        throw task.getException();
+                        throw Objects.requireNonNull(task.getException());
                     }catch ( FirebaseAuthInvalidUserException e ) {
                         excecao = "Usuário não está cadastrado.";
                     }catch ( FirebaseAuthInvalidCredentialsException e ){

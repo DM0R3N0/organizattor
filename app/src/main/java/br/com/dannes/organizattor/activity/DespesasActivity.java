@@ -1,12 +1,16 @@
 package br.com.dannes.organizattor.activity;
 
-import android.support.design.widget.TextInputEditText;
-import android.support.v7.app.AppCompatActivity;
+//import android.support.design.widget.TextInputEditText;
+
+import com.google.android.material.textfield.TextInputEditText;
+//import com.google.android.material.textfield.TextInputLayout;
+//import android.support.v7.app.AppCompatActivity;
+import androidx.appcompat.app.AppCompatActivity;
+//import androidx.annotation.NonNull;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.Toast;
-
 import br.com.dannes.organizattor.R;
 import br.com.dannes.organizattor.config.ConfiguracaoFirebase;
 import br.com.dannes.organizattor.helper.Base64Custom;
@@ -19,11 +23,13 @@ import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.ValueEventListener;
 
+import java.util.Objects;
+
 public class DespesasActivity extends AppCompatActivity {
 
     private TextInputEditText campoData, campoCategoria, campoDescricao;
     private EditText campoValor;
-    private Movimentacao movimentacao;
+    public Movimentacao movimentacao;
     private DatabaseReference firebaseRef = ConfiguracaoFirebase.getFirebaseDatabase();
     private FirebaseAuth autenticacao = ConfiguracaoFirebase.getFirebaseAutenticacao();
     private Double despesaTotal;
@@ -49,12 +55,13 @@ public class DespesasActivity extends AppCompatActivity {
         if ( validarCamposDespesa() ){
 
             movimentacao = new Movimentacao();
-            String data = campoData.getText().toString();
-            Double valorRecuperado = Double.parseDouble(campoValor.getText().toString());
+            String data = Objects.requireNonNull(campoData.getText()).toString();
+            Double valorRecuperado;
+            valorRecuperado = Double.parseDouble(campoValor.getText().toString());
 
             movimentacao.setValor( valorRecuperado );
-            movimentacao.setCategoria( campoCategoria.getText().toString() );
-            movimentacao.setDescricao( campoDescricao.getText().toString() );
+            movimentacao.setCategoria( Objects.requireNonNull(campoCategoria.getText()).toString() );
+            movimentacao.setDescricao( Objects.requireNonNull(campoDescricao.getText()).toString() );
             movimentacao.setData( data );
             movimentacao.setTipo( "d" );
 
@@ -72,10 +79,11 @@ public class DespesasActivity extends AppCompatActivity {
 
     public Boolean validarCamposDespesa(){
 
-        String textoValor = campoValor.getText().toString();
-        String textoData = campoData.getText().toString();
-        String textoCategoria = campoCategoria.getText().toString();
-        String textoDescricao = campoDescricao.getText().toString();
+        String textoValor;
+        textoValor = campoValor.getText().toString();
+        String textoData = Objects.requireNonNull(campoData.getText()).toString();
+        String textoCategoria = Objects.requireNonNull(campoCategoria.getText()).toString();
+        String textoDescricao = Objects.requireNonNull(campoDescricao.getText()).toString();
 
         if ( !textoValor.isEmpty() ){
             if ( !textoData.isEmpty() ){
@@ -112,7 +120,8 @@ public class DespesasActivity extends AppCompatActivity {
 
     public void recuperarDespesaTotal(){
 
-        String emailUsuario = autenticacao.getCurrentUser().getEmail();
+        String emailUsuario = Objects.requireNonNull(autenticacao.getCurrentUser()).getEmail();
+        assert emailUsuario != null;
         String idUsuario = Base64Custom.codificarBase64( emailUsuario );
         DatabaseReference usuarioRef = firebaseRef.child("usuarios").child( idUsuario );
 
@@ -120,6 +129,7 @@ public class DespesasActivity extends AppCompatActivity {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
                 Usuario usuario = dataSnapshot.getValue( Usuario.class );
+                assert usuario != null;
                 despesaTotal = usuario.getDespesaTotal();
             }
 
@@ -133,7 +143,8 @@ public class DespesasActivity extends AppCompatActivity {
 
     public void atualizarDespesa(Double despesa){
 
-        String emailUsuario = autenticacao.getCurrentUser().getEmail();
+        String emailUsuario = Objects.requireNonNull(autenticacao.getCurrentUser()).getEmail();
+        assert emailUsuario != null;
         String idUsuario = Base64Custom.codificarBase64( emailUsuario );
         DatabaseReference usuarioRef = firebaseRef.child("usuarios").child( idUsuario );
 
