@@ -4,9 +4,9 @@
 
     <item
         android:id="@+id/menuSair"
-        android:orderInCategory="100"
+        android:orderInCategory="50"
         android:title="Sair"
-        app:showAsAction="never"
+        app:showAsAction="collapseActionView"
         />
 
 </menu>

@@ -3,18 +3,20 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Organizzator/Organizattor/app/src/main/res/drawable/ic_launcher_background.xml" value="0.2203125" />
         <entry key="..\:/Organizzator/Organizattor/app/src/main/res/layout/activity_cadastro.xml" value="0.20416666666666666" />
-        <entry key="..\:/Organizzator/Organizattor/app/src/main/res/layout/activity_despesas.xml" value="0.20416666666666666" />
+        <entry key="..\:/Organizzator/Organizattor/app/src/main/res/layout/activity_despesas.xml" value="0.1" />
         <entry key="..\:/Organizzator/Organizattor/app/src/main/res/layout/activity_main.xml" value="0.19010416666666666" />
         <entry key="..\:/Organizzator/Organizattor/app/src/main/res/layout/activity_principal.xml" value="0.33" />
         <entry key="..\:/Organizzator/Organizattor/app/src/main/res/layout/activity_receitas.xml" value="0.1" />
         <entry key="..\:/Organizzator/Organizattor/app/src/main/res/layout/adapter_movimentacao.xml" value="0.20416666666666666" />
-        <entry key="..\:/Organizzator/Organizattor/app/src/main/res/layout/content_principal.xml" value="0.18" />
+        <entry key="..\:/Organizzator/Organizattor/app/src/main/res/layout/content_principal.xml" value="0.33" />
         <entry key="..\:/Organizzator/Organizattor/app/src/main/res/layout/intro_1.xml" value="0.20416666666666666" />
         <entry key="..\:/Organizzator/Organizattor/app/src/main/res/layout/intro_2.xml" value="0.20416666666666666" />
         <entry key="..\:/Organizzator/Organizattor/app/src/main/res/layout/intro_3.xml" value="0.20416666666666666" />
         <entry key="..\:/Organizzator/Organizattor/app/src/main/res/layout/intro_4.xml" value="0.20416666666666666" />
         <entry key="..\:/Organizzator/Organizattor/app/src/main/res/layout/intro_cadastro.xml" value="0.20416666666666666" />
+        <entry key="..\:/Organizzator/Organizattor/app/src/main/res/menu/menu_principal.xml" value="0.5" />
       </map>
     </option>
   </component>

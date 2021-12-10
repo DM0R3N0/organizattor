@@ -64,7 +64,8 @@
             app:srcCompat="@drawable/ic_adicionar_branco_24dp"
             fab:fab_colorNormal="@color/colorPrimaryReceita"
             fab:fab_label="Receita"
-            fab:fab_size="mini" />
+            fab:fab_size="mini"
+            tools:visibility="visible" />
 
     </com.github.clans.fab.FloatingActionMenu>
 
